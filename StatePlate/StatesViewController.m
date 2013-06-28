@@ -13,6 +13,7 @@
 
 @implementation StatesViewController
 //@synthesize statesArray;
+NSMutableArray *stateIndex;
 
 - (void)viewDidLoad
 {
@@ -71,33 +72,46 @@
   [self.statesArray addObject:@"WEST VIRGINIA "];
   [self.statesArray addObject:@"WISCONSIN"];
   [self.statesArray addObject:@"WYOMING"];
+  
+  stateIndex = [[NSMutableArray alloc] init];
+  for (int i=0; i<[self.statesArray count]-1; i++) {
+    char letter = [[self.statesArray objectAtIndex:i] characterAtIndex:0];
+    NSString *uniChar = [NSString stringWithFormat:@"%c", letter];
+    if (![stateIndex containsObject:uniChar]) {
+      [stateIndex addObject:uniChar];
+    }
+  }
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//  UIView *header=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
-//  [header setBackgroundColor:[UIColor blackColor]];
-//  UILabel *lbl=[[UILabel alloc]initWithFrame:CGRectMake(20, 0, 320, 20)];
-//  [header addSubview:lbl];
-//  [lbl setTextColor:[UIColor whiteColor]];
-//  [lbl setBackgroundColor:[UIColor clearColor]];
-//  [lbl setText:[keyArray objectAtIndex:section]];
-//  return header;
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return [stateIndex count];
+}
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//  NSArray *ary=[self.tblDictionary valueForKey:[keyArray objectAtIndex:section]];
-//  return [ary count];
-//}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  return [stateIndex objectAtIndex:section];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+  return stateIndex;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.statesArray count];
+  NSString *alphabet = [stateIndex objectAtIndex:section];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
+  NSArray *states = [self.statesArray filteredArrayUsingPredicate:predicate];
+  return [states count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *cellIdentifier = @"StateCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-  NSString *state = [self.statesArray objectAtIndex:indexPath.row];
-  [cell.textLabel setText:state];
+  NSString *alphabet = [stateIndex objectAtIndex:[indexPath section]];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", alphabet];
+  NSArray *states = [self.statesArray filteredArrayUsingPredicate:predicate];
+  if ([states count] > 0) {
+    NSString *state = [states objectAtIndex:indexPath.row];
+    [cell.textLabel setText:state];
+  }
   return cell;
 }
 
