@@ -21,6 +21,7 @@
 		351DF359177D348300EF983F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351DF33B177D348200EF983F /* UIKit.framework */; };
 		351DF361177D348300EF983F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 351DF35F177D348300EF983F /* InfoPlist.strings */; };
 		351DF363177D348300EF983F /* StatePlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF362177D348300EF983F /* StatePlateTests.m */; };
+		351DF371177DD78900EF983F /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF370177DD5E700EF983F /* State.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		351DF35E177D348300EF983F /* StatePlateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StatePlateTests-Info.plist"; sourceTree = "<group>"; };
 		351DF360177D348300EF983F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		351DF362177D348300EF983F /* StatePlateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatePlateTests.m; sourceTree = "<group>"; };
+		351DF36F177DD5E700EF983F /* State.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		351DF370177DD5E700EF983F /* State.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				351DF346177D348300EF983F /* StatesAppDelegate.h */,
 				351DF347177D348300EF983F /* StatesAppDelegate.m */,
 				351DF349177D348300EF983F /* Main.storyboard */,
+				351DF36F177DD5E700EF983F /* State.h */,
+				351DF370177DD5E700EF983F /* State.m */,
 				351DF34C177D348300EF983F /* StatesViewController.h */,
 				351DF34D177D348300EF983F /* StatesViewController.m */,
 				351DF34F177D348300EF983F /* Images.xcassets */,
@@ -250,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351DF371177DD78900EF983F /* State.m in Sources */,
 				351DF348177D348300EF983F /* StatesAppDelegate.m in Sources */,
 				351DF344177D348300EF983F /* main.m in Sources */,
 				351DF34E177D348300EF983F /* StatesViewController.m in Sources */,
