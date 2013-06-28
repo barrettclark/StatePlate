@@ -22,6 +22,7 @@
 		351DF361177D348300EF983F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 351DF35F177D348300EF983F /* InfoPlist.strings */; };
 		351DF363177D348300EF983F /* StatePlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF362177D348300EF983F /* StatePlateTests.m */; };
 		351DF371177DD78900EF983F /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF370177DD5E700EF983F /* State.m */; };
+		351DF378177DFDF100EF983F /* StateDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF377177DFDF100EF983F /* StateDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		351DF362177D348300EF983F /* StatePlateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatePlateTests.m; sourceTree = "<group>"; };
 		351DF36F177DD5E700EF983F /* State.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
 		351DF370177DD5E700EF983F /* State.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
+		351DF376177DFDF100EF983F /* StateDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateDataController.h; sourceTree = "<group>"; };
+		351DF377177DFDF100EF983F /* StateDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateDataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				351DF349177D348300EF983F /* Main.storyboard */,
 				351DF36F177DD5E700EF983F /* State.h */,
 				351DF370177DD5E700EF983F /* State.m */,
+				351DF376177DFDF100EF983F /* StateDataController.h */,
+				351DF377177DFDF100EF983F /* StateDataController.m */,
 				351DF34C177D348300EF983F /* StatesViewController.h */,
 				351DF34D177D348300EF983F /* StatesViewController.m */,
 				351DF34F177D348300EF983F /* Images.xcassets */,
@@ -258,6 +263,7 @@
 				351DF371177DD78900EF983F /* State.m in Sources */,
 				351DF348177D348300EF983F /* StatesAppDelegate.m in Sources */,
 				351DF344177D348300EF983F /* main.m in Sources */,
+				351DF378177DFDF100EF983F /* StateDataController.m in Sources */,
 				351DF34E177D348300EF983F /* StatesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

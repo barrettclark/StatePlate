@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class StateDataController;
+
 @interface StatesViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) StateDataController *dataController;
 
 @end
