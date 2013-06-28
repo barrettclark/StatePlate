@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StatesViewController : UIViewController
+@interface StatesViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *statesArray;
 
 @end
