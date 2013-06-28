@@ -87,12 +87,12 @@ NSMutableArray *stateIndex;
   return [stateIndex count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  return [stateIndex objectAtIndex:section];
-}
-
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
   return stateIndex;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  return [stateIndex objectAtIndex:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
