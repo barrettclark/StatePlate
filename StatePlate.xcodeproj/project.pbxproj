@@ -23,6 +23,8 @@
 		351DF363177D348300EF983F /* StatePlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF362177D348300EF983F /* StatePlateTests.m */; };
 		351DF371177DD78900EF983F /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF370177DD5E700EF983F /* State.m */; };
 		351DF378177DFDF100EF983F /* StateDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF377177DFDF100EF983F /* StateDataController.m */; };
+		351DF37B177F49B300EF983F /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 351DF379177F49B300EF983F /* checked.png */; };
+		351DF37C177F49B300EF983F /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 351DF37A177F49B300EF983F /* unchecked.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		351DF370177DD5E700EF983F /* State.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
 		351DF376177DFDF100EF983F /* StateDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateDataController.h; sourceTree = "<group>"; };
 		351DF377177DFDF100EF983F /* StateDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateDataController.m; sourceTree = "<group>"; };
+		351DF379177F49B300EF983F /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		351DF37A177F49B300EF983F /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 		351DF33E177D348300EF983F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				351DF379177F49B300EF983F /* checked.png */,
+				351DF37A177F49B300EF983F /* unchecked.png */,
 				351DF33F177D348300EF983F /* StatePlate-Info.plist */,
 				351DF340177D348300EF983F /* InfoPlist.strings */,
 				351DF343177D348300EF983F /* main.m */,
@@ -240,8 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				351DF350177D348300EF983F /* Images.xcassets in Resources */,
+				351DF37B177F49B300EF983F /* checked.png in Resources */,
 				351DF342177D348300EF983F /* InfoPlist.strings in Resources */,
 				351DF34B177D348300EF983F /* Main.storyboard in Resources */,
+				351DF37C177F49B300EF983F /* unchecked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
