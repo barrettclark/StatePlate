@@ -57,18 +57,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-  if (cell.accessoryType == UITableViewCellAccessoryNone) {
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-  } else {
-    cell.accessoryType = UITableViewCellAccessoryNone;
-  }
   NSString *letter = [self.dataController.masterStateIndex objectAtIndex:[indexPath section]];
   NSArray *states = [self.dataController statesForSection:letter];
-  NSString *state = [states objectAtIndex:indexPath.row];
-  NSLog(state);
-//  TODO: Change data to be a dictionary so we can look states up eaily and update the boolean
-//  TODO: app icon
+  State *state = [self.dataController.masterStateDictionary objectForKey:[states objectAtIndex:indexPath.row]];
+  NSLog(state.name);
+
+  UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+  if (!state.found) {
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    state.found = true;
+  } else {
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    state.found = false;
+  }
 }
 
 - (void)didReceiveMemoryWarning

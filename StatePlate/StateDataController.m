@@ -78,19 +78,24 @@
                 @"Wyoming",
                 nil
                 ];
-  self.masterStateList = [State stateFactory:stateNames];
+//  self.masterStateList = [State stateFactory:stateNames];
+  self.masterStateDictionary = [[NSMutableDictionary alloc] initWithObjects:[State stateFactory:stateNames] forKeys:stateNames];
   NSMutableArray *idx = [[NSMutableArray alloc] init];
-  for (State* state in self.masterStateList) {
+
+  NSEnumerator *enumerator = [_masterStateDictionary objectEnumerator];
+  id value;
+  while ((value = [enumerator nextObject])) {
+    State *state = value;
     NSString *uniChar = [NSString stringWithFormat:@"%c", state.initial];
     if (![idx containsObject:uniChar]) {
       [idx addObject:uniChar];
     }
   }
-  self.masterStateIndex = idx;
+  self.masterStateIndex = [idx sortedArrayUsingSelector: @selector (compare:)];
 }
 
 - (NSUInteger)countOfList {
-  return [self.masterStateList count];
+  return [self.masterStateDictionary count];
 }
 
 //- (NSInteger)countOfLetter:(NSString *)theLetter {
@@ -109,7 +114,10 @@
   NSMutableArray *list;
   list = [[NSMutableArray alloc] init];
   NSString *initial;
-  for (State* state in self.masterStateList) {
+  NSEnumerator *enumerator = [_masterStateDictionary objectEnumerator];
+  id value;
+  while ((value = [enumerator nextObject])) {
+    State *state = value;
     initial = [NSString stringWithFormat:@"%c", state.initial];
     if ([initial isEqualToString:theLetter]) {
       [list addObject:state.name];
@@ -119,11 +127,12 @@
 }
 
 - (State *)objectInListAtIndex:(NSUInteger)theIndex {
-  return [self.masterStateList objectAtIndex:theIndex];
+  NSArray *sortedKeys = [_masterStateDictionary keysSortedByValueUsingSelector:@selector(compare:)];
+  return [sortedKeys objectAtIndex:theIndex];
 }
 
 - (void)addStateWithState:(State *)state {
-  [self.masterStateList addObject:state];
+  [self.masterStateDictionary setObject:state forKey:state.name];
 }
 
 @end

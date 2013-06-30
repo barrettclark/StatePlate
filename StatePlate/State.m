@@ -10,20 +10,13 @@
 
 @implementation State
 
-//NSMutableArray *stateIndex;
-
 + (NSArray *)stateFactory:(NSArray *)states {
-//  stateIndex = [[NSMutableArray alloc] init];
 
   NSMutableArray *stateList;
   stateList = [[NSMutableArray alloc] init];
   for (NSString* stateName in states) {
     State *state = [[State alloc] initWithName:stateName];
     [stateList addObject:state];
-//    NSString *uniChar = [NSString stringWithFormat:@"%c", state.initial];
-//    if (![stateIndex containsObject:uniChar]) {
-//      [stateIndex addObject:uniChar];
-//    }
   }
 
   return stateList;
