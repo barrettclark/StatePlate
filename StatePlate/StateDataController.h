@@ -12,7 +12,6 @@
 
 @interface StateDataController : NSObject
 
-//@property (nonatomic, copy) NSMutableArray *masterStateList;
 @property (nonatomic, copy) NSMutableDictionary *masterStateDictionary;
 @property (nonatomic, copy) NSMutableArray *masterStateIndex;
 

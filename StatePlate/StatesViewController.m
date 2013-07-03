@@ -45,30 +45,32 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *cellIdentifier = @"StateCell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StateCell"];
+  cell.accessoryType = UITableViewCellAccessoryNone;
+
   NSString *letter = [self.dataController.masterStateIndex objectAtIndex:[indexPath section]];
   NSArray *states = [self.dataController statesForSection:letter];
   if ([states count] > 0) {
-    NSString *state = [states objectAtIndex:indexPath.row];
-    [cell.textLabel setText:state];
+    State *state = [self.dataController.masterStateDictionary objectForKey:[states objectAtIndex:indexPath.row]];
+    [cell.textLabel setText:state.name];
+    if (state.found) {
+      cell.accessoryType = UITableViewCellAccessoryCheckmark;
+      [cell setSelected:YES animated:YES];
+    }
   }
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSString *letter = [self.dataController.masterStateIndex objectAtIndex:[indexPath section]];
-  NSArray *states = [self.dataController statesForSection:letter];
-  State *state = [self.dataController.masterStateDictionary objectForKey:[states objectAtIndex:indexPath.row]];
-  NSLog(state.name);
-
   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-  if (!state.found) {
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    state.found = true;
-  } else {
+  State *state = [self.dataController.masterStateDictionary objectForKey:cell.textLabel.text];
+  NSLog(state.name);
+  if (state.found) {
     cell.accessoryType = UITableViewCellAccessoryNone;
     state.found = false;
+  } else {
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    state.found = true;
   }
 }
 

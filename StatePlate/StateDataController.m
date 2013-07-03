@@ -78,7 +78,6 @@
                 @"Wyoming",
                 nil
                 ];
-//  self.masterStateList = [State stateFactory:stateNames];
   self.masterStateDictionary = [[NSMutableDictionary alloc] initWithObjects:[State stateFactory:stateNames] forKeys:stateNames];
   NSMutableArray *idx = [[NSMutableArray alloc] init];
 
@@ -123,7 +122,7 @@
       [list addObject:state.name];
     }
   }
-  return list;
+  return [list sortedArrayUsingSelector:@selector(compare:)];
 }
 
 - (State *)objectInListAtIndex:(NSUInteger)theIndex {
