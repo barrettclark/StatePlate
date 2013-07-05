@@ -25,6 +25,9 @@
 		351DF378177DFDF100EF983F /* StateDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351DF377177DFDF100EF983F /* StateDataController.m */; };
 		351DF37B177F49B300EF983F /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 351DF379177F49B300EF983F /* checked.png */; };
 		351DF37C177F49B300EF983F /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 351DF37A177F49B300EF983F /* unchecked.png */; };
+		356A3A5B17873DD1008AD111 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356A3A5A17873DD1008AD111 /* CoreData.framework */; };
+		356A3AA2178750DB008AD111 /* Found.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356A3AA0178750DB008AD111 /* Found.xcdatamodeld */; };
+		356A3AA517875111008AD111 /* Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 356A3AA417875111008AD111 /* Found.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,10 @@
 		351DF377177DFDF100EF983F /* StateDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateDataController.m; sourceTree = "<group>"; };
 		351DF379177F49B300EF983F /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		351DF37A177F49B300EF983F /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		356A3A5A17873DD1008AD111 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		356A3AA1178750DB008AD111 /* Found.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Found.xcdatamodel; sourceTree = "<group>"; };
+		356A3AA317875111008AD111 /* Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Found.h; sourceTree = "<group>"; };
+		356A3AA417875111008AD111 /* Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Found.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356A3A5B17873DD1008AD111 /* CoreData.framework in Frameworks */,
 				351DF33A177D348200EF983F /* CoreGraphics.framework in Frameworks */,
 				351DF33C177D348200EF983F /* UIKit.framework in Frameworks */,
 				351DF338177D348200EF983F /* Foundation.framework in Frameworks */,
@@ -111,6 +119,7 @@
 		351DF336177D348200EF983F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				356A3A5A17873DD1008AD111 /* CoreData.framework */,
 				351DF337177D348200EF983F /* Foundation.framework */,
 				351DF339177D348200EF983F /* CoreGraphics.framework */,
 				351DF33B177D348200EF983F /* UIKit.framework */,
@@ -122,6 +131,9 @@
 		351DF33D177D348300EF983F /* StatePlate */ = {
 			isa = PBXGroup;
 			children = (
+				356A3AA0178750DB008AD111 /* Found.xcdatamodeld */,
+				356A3AA317875111008AD111 /* Found.h */,
+				356A3AA417875111008AD111 /* Found.m */,
 				351DF346177D348300EF983F /* StatesAppDelegate.h */,
 				351DF347177D348300EF983F /* StatesAppDelegate.m */,
 				351DF349177D348300EF983F /* Main.storyboard */,
@@ -272,6 +284,8 @@
 				351DF348177D348300EF983F /* StatesAppDelegate.m in Sources */,
 				351DF344177D348300EF983F /* main.m in Sources */,
 				351DF378177DFDF100EF983F /* StateDataController.m in Sources */,
+				356A3AA517875111008AD111 /* Found.m in Sources */,
+				356A3AA2178750DB008AD111 /* Found.xcdatamodeld in Sources */,
 				351DF34E177D348300EF983F /* StatesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +489,7 @@
 				351DF368177D348300EF983F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		351DF369177D348300EF983F /* Build configuration list for PBXNativeTarget "StatePlateTests" */ = {
 			isa = XCConfigurationList;
@@ -483,8 +498,22 @@
 				351DF36B177D348300EF983F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		356A3AA0178750DB008AD111 /* Found.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				356A3AA1178750DB008AD111 /* Found.xcdatamodel */,
+			);
+			currentVersion = 356A3AA1178750DB008AD111 /* Found.xcdatamodel */;
+			path = Found.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 351DF32C177D348200EF983F /* Project object */;
 }

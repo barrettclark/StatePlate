@@ -28,7 +28,6 @@
     _name = name;
     _initial = [name characterAtIndex:0];
     _found = FALSE;
-//    NSLog(@"%c", _initial);
     return self;
   }
   return nil;
