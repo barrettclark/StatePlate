@@ -21,14 +21,19 @@
   self.dataController = [[StateDataController alloc] init];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//  [super viewWillAppear:animated];
+//}
+
+//- (void)viewDidAppear:(BOOL)animated {
+//  [super viewDidAppear:animated];
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+  [self updateNavigationBarText];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -68,7 +73,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
   State *state = [self.dataController.masterStateDictionary objectForKey:cell.textLabel.text];
-  NSLog(state.name);
   if (state.found || [self stateExists:state.name]) {
     cell.accessoryType = UITableViewCellAccessoryNone;
     state.found = false;
@@ -78,6 +82,14 @@
     state.found = true;
     [self insertNewManagedObject:state.name];
   }
+  [self updateNavigationBarText];
+}
+
+-(void)updateNavigationBarText {
+  //  float pct = ([self countOfFound]/(float) 51);
+  //  NSLog(@"%f, %d", pct, [self countOfFound]);
+  self.navigationItem.title = [NSString stringWithFormat:@"States Found: %d/51", [self countOfFound]];
+  [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,7 +132,7 @@
 
   // Save the context.
   if (![context save:&error]) {
-    NSLog(@"Error creating object");
+    NSLog(@"Error deleting object");
     abort();
   }
 }
@@ -141,6 +153,20 @@
   } else {
     return false;
   }
+}
+
+- (NSInteger)countOfFound {
+  StatesAppDelegate *appDelegate = (StatesAppDelegate *)[[UIApplication sharedApplication]delegate];
+  NSManagedObjectContext *context = [appDelegate managedObjectContext];
+  NSFetchRequest *request = [[NSFetchRequest alloc] init];
+  [request setEntity: [NSEntityDescription entityForName:@"Found" inManagedObjectContext: context]];
+  
+  NSError *error = nil;
+  NSUInteger count = [context countForFetchRequest: request error: &error];
+  if (count == NSNotFound) {
+    //Handle error
+  }
+  return count;
 }
 
 @end
