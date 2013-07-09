@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *resetButton;
 @property (strong, nonatomic) StateDataController *dataController;
 @property (strong, nonatomic) NSArray *labelArray;
 

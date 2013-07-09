@@ -54,9 +54,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="States, Yo" id="aSZ-D1-hV4">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="stX-HX-eMx"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="States, Yo" id="aSZ-D1-hV4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g9-7M-jb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,7 +80,9 @@
         <class className="StatesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StatesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="resetGame:"/>
                 <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="resetButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
