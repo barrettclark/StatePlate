@@ -34,8 +34,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
   [self updateNavigationBarText];
-  UIBarButtonItem *resetButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(resetGame)];
-  self.navigationItem.leftBarButtonItem = resetButton;
+//  UIBarButtonItem *resetButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(resetGame)];
+//  self.navigationItem.leftBarButtonItem = resetButton;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -171,9 +171,15 @@
   return count;
 }
 
+-(IBAction)resetGame:(id)sender {
+  [self.tableView beginUpdates];
+  [self resetGame];
+  [self.tableView reloadData];
+  [self.tableView endUpdates];
+}
+
 -(void)resetGame {
   NSLog(@"Game cleared");
-//  [self.tableView beginUpdates];
   StatesAppDelegate *appDelegate = (StatesAppDelegate *)[[UIApplication sharedApplication]delegate];
   NSManagedObjectContext *context = [appDelegate managedObjectContext];
   NSEntityDescription *entity = [NSEntityDescription entityForName:@"Found" inManagedObjectContext:context];
@@ -188,9 +194,6 @@
     State *state = [self.dataController.masterStateDictionary objectForKey:[found valueForKey:@"stateName"]];
     state.found = false;
   }
-//  TODO: reload uitableview
-  [self.tableView reloadData];
-//  [self.tableView endUpdates];
   [self updateNavigationBarText];
 }
 

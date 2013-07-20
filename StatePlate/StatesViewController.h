@@ -24,5 +24,6 @@
 
 - (void)insertNewManagedObject:(NSString *)stateName;
 - (void)deleteManagedObject:(NSString *)stateName;
+- (IBAction)resetGame:(id)sender;
 
 @end

@@ -54,39 +54,19 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="States, Yo" id="aSZ-D1-hV4"/>
+                    <navigationItem key="navigationItem" title="States, Yo" id="aSZ-D1-hV4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Tr1-ih-DRw">
+                            <connections>
+                                <action selector="resetGame:" destination="aKJ-cQ-0Rs" id="GEc-4y-LYH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g9-7M-jb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1113" y="-300"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="2A4-tW-dCW">
-            <objects>
-                <viewController id="SFB-y8-5Ra" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hDs-eD-rYg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RC6-Mb-o9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-698" y="-300"/>
-        </scene>
     </scenes>
-    <classes>
-        <class className="StatesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="resetGame:"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="resetButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
