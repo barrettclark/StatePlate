@@ -34,8 +34,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
   [self updateNavigationBarText];
-//  UIBarButtonItem *resetButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(resetGame)];
-//  self.navigationItem.leftBarButtonItem = resetButton;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -91,11 +89,10 @@
   //  float pct = ([self countOfFound]/(float) 51);
   //  NSLog(@"%f, %d", pct, [self countOfFound]);
   self.navigationItem.title = [NSString stringWithFormat:@"States Found: %d/51", [self countOfFound]];
-  [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
+//  [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -193,6 +190,10 @@
     [context deleteObject:found];
     State *state = [self.dataController.masterStateDictionary objectForKey:[found valueForKey:@"stateName"]];
     state.found = false;
+  }
+  if (![context save:&error]) {
+    NSLog(@"Error creating object");
+    abort();
   }
   [self updateNavigationBarText];
 }
